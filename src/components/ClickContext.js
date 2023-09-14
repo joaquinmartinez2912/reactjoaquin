@@ -13,7 +13,7 @@ class ClickContext extends Component {
     }
 
     handleMouseMove(e){
-        const {clientX, clientY} = e
+        const {clientX, clientY} = e  // clientX y clienteY son propiedades predeterminadas en el DOM que tiene el evento 
         this.setState({
             x : clientX,
             y: clientY
@@ -28,7 +28,7 @@ class ClickContext extends Component {
                 <div style={{
                     width: 300,
                     height: 150,
-                    border: "solid lpx #222"
+                    border: "solid 1px #222"
                 }}
                     onMouseMove={this.handleMouseMove}> </div>
             </>
