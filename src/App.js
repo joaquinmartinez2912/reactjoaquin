@@ -8,6 +8,7 @@ import usuarios from './data/usuarios.json';
 import { Component } from 'react';
 import ClickContext from './components/ClickContext';
 import Formulario from './components/Formularios';
+import Figura from './components/Figura';
 
 //function MostrarNumero(props){
 //  return(
@@ -57,6 +58,7 @@ function App() {
       <ClickContext />
       <Formulario />
       <ListarUsuario usuarios = {usuarios} />
+      <Figura />
 
 
     </div>
