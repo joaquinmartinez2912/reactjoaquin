@@ -1,0 +1,23 @@
+[
+    {
+        "id": "ABC001",
+        "name": "Inicio"
+    },
+    {
+        "id": "ABC002",
+        "name": "Productos"
+    },
+    {
+        "id": "ABC003",
+        "name": "Contacto"
+    },
+    {
+        "id": "ABC004",
+        "name": "Sobre Nosotros"
+    },
+    {
+        "id": "ABC005",
+        "name": "Otro Nuevo"
+    }
+]
+
