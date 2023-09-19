@@ -5,7 +5,21 @@
     },
     {
         "id": "ABC002",
-        "name": "Productos"
+        "name": "Productos",
+        "list": [
+            {
+                "id": 1,
+                "name": "Libros"
+            },
+            {
+                "id":2,
+                "name": "Peliculas"
+            },
+            {
+                "id":3,
+                "name": "audioLibros"
+            }
+        ]
     },
     {
         "id": "ABC003",
@@ -20,4 +34,3 @@
         "name": "Otro Nuevo"
     }
 ]
-

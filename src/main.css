@@ -25,3 +25,13 @@ button {
     color: yellow;
     font-size:large;
 }
+
+.sub-menu-ul {
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transición de opacidad durante 0.3 segundos */
+  }
+  
+  .sub-menu-ul.open {
+    opacity: 1;
+  }
+  
