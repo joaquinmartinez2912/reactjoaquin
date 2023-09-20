@@ -5,7 +5,7 @@ import ListaMenu from './ListaMenu';
 
 function Menu() {
   
-  const [mostrarMenu, setmostrarMenu] = useState(true)
+  const [mostrarMenu, setmostrarMenu] = useState(false)
 
   const handlerMenu = () => {
     setmostrarMenu(!mostrarMenu)
