@@ -1,5 +1,5 @@
 import { useState } from "react";
-//import { useEffect } from "react";
+import { useEffect } from "react";
 import "../main.css";
 
 function ListaMenu(props) {
@@ -11,36 +11,32 @@ function ListaMenu(props) {
   const [top, settop] = useState(0)
 
 // Con esto defino las variables una sola vez.
-/*   useEffect(() => {
+ useEffect(() => {
     // Calcular los valores iniciales de left y top una vez cuando se carga la página o cambia el contenido
     const elementoLi = document.getElementById("elementoLi"); // Reemplaza "elementoLi" con el ID del elemento <li> que desees usar como referencia
     if (elementoLi) {
-      setleft(elementoLi.offsetLeft + elementoLi.offsetWidth + "px");
+      setleft(elementoLi.offsetLeft + elementoLi.offsetWidth + "px");  // El left te dice cuanto se debe mover y el Width cuanto debe medir.
       settop(elementoLi.offsetTop + "px");
     }
-  }, [datos]);
- */
+  }, []);
+
   //Defino los manejadores de eventos para mostrar el submenu, no cargo datos con esto, solo abro el submenu
   const handleMostrarSubMenu = (SubMenuId,e) => {
-    e.preventDefault(e)
+    e.preventDefault(e) // iria??...no cambia nada...sera porque no hay un comportamiento predeterminado para este evento???
     setMosrarSubLista((prev) => {
       let arr = [...prev];
       arr[SubMenuId] = true;
-      console.log(top)
-      setleft(e.target.offsetLeft + e.target.offsetWidth + "px") // El left te dice cuanto se debe mover y el Width cuanto debe medir.
+      setleft(e.target.offsetLeft + e.target.offsetWidth + "px")
       settop(e.target.offsetTop + "px") 
       return arr
     }
     )
   }
 
-  const handleOcultarSubMenu = (SubMenuId,e) => {
-    e.preventDefault(e) // iria??...no cambia nada...sera porque no hay un comportamiento predeterminado para este evento???
+  const handleOcultarSubMenu = (SubMenuId) => {
     setMosrarSubLista((prev) => {
       let arr = [...prev];
       arr[SubMenuId] = false;
-      setleft(e.target.offsetLeft + e.target.offsetWidth + "px") // El left te dice cuanto se debe mover y el Width cuanto debe medir.
-      settop(e.target.offsetTop + "px") 
       return arr
     }
     )
@@ -67,8 +63,7 @@ function ListaMenu(props) {
               }}
               >
                 <li>{left} {top}</li>
-                <li>Hola</li>
-                <li>Chau</li>
+
              </ul>
             </li>
 
