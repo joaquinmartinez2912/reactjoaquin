@@ -1,12 +1,7 @@
 [
     {
         "id": "ABC001",
-        "name": "Inicio",
-        "list": [
-            {
-                "id":1
-            }
-        ]
+        "name": "Inicio"
     },
     {
         "id": "ABC002",
@@ -21,7 +16,7 @@
                 "name": "Peliculas"
             },
             {
-                "id":3,
+                "id":4,
                 "name": "audioLibros"
             }
         ]
@@ -31,25 +26,31 @@
         "name": "Contacto",
         "list": [
             {
-                "id":1
+                "id":1,
+                "name":"Telefono"
+            },
+            {
+                "id":2,
+                "name":"Correo electronico"
             }
+
         ]
     },
     {
         "id": "ABC004",
-        "name": "Sobre Nosotros",
-        "list": [
-            {
-                "id":1
-            }
-        ]
+        "name": "Sobre Nosotros"
     },
     {
         "id": "ABC005",
         "name": "Otro Nuevo",
         "list": [
             {
-                "id":1
+                "id":1,
+                "name":"otra cosa1"
+            },
+            {
+                "id":2,
+                "name":"otra cosa2"
             }
         ]
     }
