@@ -1,0 +1,56 @@
+[
+    {
+        "id": "ABC001",
+        "name": "Inicio",
+        "list": [
+            {
+                "id":1
+            }
+        ]
+    },
+    {
+        "id": "ABC002",
+        "name": "Productos",
+        "list": [
+            {
+                "id": 1,
+                "name": "Libros"
+            },
+            {
+                "id":2,
+                "name": "Peliculas"
+            },
+            {
+                "id":3,
+                "name": "audioLibros"
+            }
+        ]
+    },
+    {
+        "id": "ABC003",
+        "name": "Contacto",
+        "list": [
+            {
+                "id":1
+            }
+        ]
+    },
+    {
+        "id": "ABC004",
+        "name": "Sobre Nosotros",
+        "list": [
+            {
+                "id":1
+            }
+        ]
+    },
+    {
+        "id": "ABC005",
+        "name": "Otro Nuevo",
+        "list": [
+            {
+                "id":1
+            }
+        ]
+    }
+]

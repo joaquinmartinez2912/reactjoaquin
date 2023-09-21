@@ -1,0 +1,39 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0rem;
+}
+
+li, button {
+    display: flex;
+    background-color: yellow;
+    width: 10rem;
+    height: 2rem;
+    color: black;
+    border-radius: 0 0.5rem 0.5rem 0;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black ;
+    margin-bottom: 1px;
+}
+
+button {
+    background-color: black;
+    color: yellow;
+    font-size:large;
+}
+
+.sub-menu-ul {
+    opacity: 0;
+    transition: opacity 0.1s ; 
+    position: absolute;
+
+  }
+
+.sub-menu-ul.open {
+opacity: 1;
+}
+  
