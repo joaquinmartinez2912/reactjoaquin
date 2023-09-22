@@ -12,14 +12,17 @@ function Menu() {
   }
 
   return (
-    <nav>
+    <div>
       <button onClick={handlerMenu} >Menu</button>
+      <nav>
 
-      {mostrarMenu &&
-        <ListaMenu lista={data} />
-      }
 
-    </nav>
+        {mostrarMenu &&
+          <ListaMenu lista={data} />
+        }
+
+      </nav>
+    </div>
   )
 }
 

@@ -1,41 +1,62 @@
-ul {
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
-    padding: 0rem;
+nav{
+    width: 1200px;
 }
 
-li, button {
+/* Se aplica sobre el <ul> que esta en el nav principal*/
+.main-nav {
+    display: flex; /* No le pongo flex direction para que quede horizontal */
+    list-style: none;
+    width: 1350px;
+    padding: 0rem; /*  Para que quede contra el margen */
+    justify-content:center;
+  }
+
+/* 
+Lista de botones:
+- Boton que despliega Menu
+*/
+button {
+    background-color: black;
+    color: yellow;
+    font-size:large;
+    width: 150px;
+    height: 2rem;
+
+}
+
+li {
     display: flex;
     background-color: yellow;
-    width: 10rem;
-    height: 2rem;
+    width: 200px;
+    height: 30px;
     color: black;
-    border-radius: 0 0.5rem 0.5rem 0;
+    border-radius: 0 0 0 0;
     cursor: pointer;
     align-items: center;
     justify-content: center;
     text-align: center;
     border: 1px solid black ;
-    margin-bottom: 1px;
+    margin-right: 1px;
 }
 
-button {
-    background-color: black;
-    color: yellow;
-    font-size:large;
-}
 
+/* Estilo del submenú */
 .sub-menu-ul {
+    /* ... Otros estilos ... */
     opacity: 0;
-    transition: opacity 0.1s ; 
+    transition: opacity 0.1s;
     position: absolute;
-
-  }
+    top: 100%; /* Coloca el submenú debajo del elemento <li> */
+    left: 0; /* Alinea el submenú con el borde izquierdo del elemento <li> */
+}
 
 .sub-menu-ul.open {
-position: absolute;
-opacity: 1;
-left:162px
+    /* ... Otros estilos ... */
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    opacity: 1;
+    /* Puedes ajustar left y top según tus preferencias para el posicionamiento exacto */
+    left: 331px;
+    top: 80px; /* Esto controla la distancia desde la parte superior del elemento <li> */
 }
-  

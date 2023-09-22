@@ -6,17 +6,17 @@ function ListaMenu(props) {
 
   // Defino una variable con un estado para controlar el submenu que contiene una lista con los datos a mostrar.
   const [mostrarSubLista, setMosrarSubLista] = useState([])
-  const [left, setleft] = useState(0)
-  const [top, settop] = useState(0)
+  // const [left, setleft] = useState(0)
+  // const [top, settop] = useState(0)
   // const [veces, setVeces] = useState(0)
 
   //Defino los manejadores de eventos para mostrar el submenu, no cargo datos con esto, solo abro el submenu
   const handleMostrarSubMenu = (SubMenuId, e) => {
     e.preventDefault();
 
-    const { offsetLeft, offsetTop, offsetWidth } = e.target;
-    setleft(`${offsetLeft + offsetWidth}px`);
-    settop(`${offsetTop}px`);
+    // const { offsetLeft, offsetTop, offsetWidth } = e.target;
+    // setleft(`${offsetLeft + offsetWidth}px`);
+    // settop(`${offsetTop}px`);
 
     setMosrarSubLista((prev) => {
       const arr = [...prev];
@@ -38,9 +38,8 @@ function ListaMenu(props) {
   };
 
   return (
-    <div>
 
-      <ul>
+      <ul className="main-nav">
 
         {datos.map((item) => {
           return (
@@ -48,11 +47,11 @@ function ListaMenu(props) {
               <li
                 // Capturo el evento (Hacer click en un item determinado) y mando el id que corresponde para que se ejecute la funcion. El id lo uso para modificar el estado
                 key={item.id}
-                onMouseEnter={(e) => handleMostrarSubMenu(item.id, e)}
-                onMouseLeave={(e) => handleOcultarSubMenu(item.id, e)}
+                onClick={(e) => handleMostrarSubMenu(item.id, e)}
+                //onMouseLeave={(e) => handleOcultarSubMenu(item.id, e)}
               >
                 <div>
-                  <span>{item.name + " -->"}</span>
+                  <span>{item.name}</span>
                 </div>
                 {/* Agrego la ul que se va a mostrar cuando se haga click */}
                 <ul className={`sub-menu-ul ${mostrarSubLista[item.id] ? "open" : ""}`}
@@ -77,7 +76,7 @@ function ListaMenu(props) {
 
       </ul>
 
-    </div>
+
   )
 }
 
