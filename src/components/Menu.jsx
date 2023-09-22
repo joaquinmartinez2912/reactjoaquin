@@ -4,22 +4,22 @@ import "../main.css";
 import ListaMenu from './ListaMenu';
 
 function Menu() {
-  
+
   const [mostrarMenu, setmostrarMenu] = useState(false)
 
   const handlerMenu = () => {
     setmostrarMenu(!mostrarMenu)
   }
-  
+
   return (
-      <aside>
-        <button onClick={handlerMenu} >Menu</button>
+    <nav>
+      <button onClick={handlerMenu} >Menu</button>
 
-        {mostrarMenu &&    
-        <ListaMenu lista={data} /> 
-        }
+      {mostrarMenu &&
+        <ListaMenu lista={data} />
+      }
 
-      </aside>
+    </nav>
   )
 }
 

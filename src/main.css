@@ -34,6 +34,8 @@ button {
   }
 
 .sub-menu-ul.open {
+position: absolute;
 opacity: 1;
+left:162px
 }
   
