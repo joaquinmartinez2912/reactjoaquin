@@ -25,8 +25,8 @@ button {
 }
 
 li {
-    display: flex;
-    background-color: yellow;
+    display: block;
+    
     width: 200px;
     height: 30px;
     color: black;
@@ -51,6 +51,6 @@ li {
     /* ... Otros estilos ... */
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: fixed;
     opacity: 1;
 }

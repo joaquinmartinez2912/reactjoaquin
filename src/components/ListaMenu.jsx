@@ -2,81 +2,107 @@ import { useState } from "react";
 import "../main.css";
 
 function ListaMenu(props) {
-  const datos = props.lista
-  
+  const datos = props.data
 
   // Defino una variable con un estado para controlar el submenu que contiene una lista con los datos a mostrar.
   const [estadoSubLista, setestadoSubLista] = useState(false)
-  const [mostrarSubLista, setMosrarSubLista] = useState([])
+  const [estadoSubLista2, setestadoSubLista2] = useState(false)
 
-  const [left, setleft] = useState(0)
-  const [top, settop] = useState(0)
-  const [veces, setVeces] = useState(0)
+  // const [veces, setVeces] = useState(0)
 
   //Defino los manejadores de eventos para mostrar el submenu, no cargo datos con esto, solo abro el submenu
-  const handleMostrarSubMenu = (SubMenuId, e) => {
-    console.log( e)
+  const handleMostrarSubMenu = (itemId, e) => {
     e.preventDefault();
 
-    const { offsetLeft, offsetTop, offsetWidth, clientHeight, clientLeft, clientTop, clientWidth } = e.target;
-    setleft(`${clientLeft}px`);
-    settop(`${clientHeight}px`);
-    console.log(clientHeight)
-    console.log(clientLeft)
-    console.log(clientTop)
-    console.log(clientWidth)
-
     setestadoSubLista(!estadoSubLista)
-    console.log( estadoSubLista)
+    estadoSubLista2 && 
+    setestadoSubLista2(false)
+  ;
+  };
 
-    setMosrarSubLista((prev) => {
-      const arr = [...prev];
-      arr[SubMenuId] = true; // Que esto sea verdadero o falso define como se va a completar el css de la <ul>
-      //setVeces(veces+1)
-      //alert(veces)
-      console.log(arr)
+  const handleSubMenuNivel3 = (itemId, e) => {
+    e.preventDefault();
+   
+    setestadoSubLista2(!estadoSubLista2)
 
-      return arr;
-    });
+    ;
   };
 
   return (
 
-      <ul className="main-nav">
+    <ul className="main-nav" >
 
-        {datos.map((item) => {
-          return (
-            item.list ? // Desde aca empiezo a trabajar los hijos. Va a devolver un <li> con un evento asociado
-              <li
-                // Capturo el evento (Hacer click en un item determinado) y mando el id que corresponde para que se ejecute la funcion. El id lo uso para modificar el estado
-                key={item.id}
-                onClick={(e) => handleMostrarSubMenu(item.id, e)}
-                >
-                <div style={{position: "absolute"}}>
-                  <span>{item.name +"(flecha)"}</span>
-                </div>
-                {/* Agrego la ul que se va a mostrar cuando se haga click */}
-                <ul className={`sub-menu-ul ${mostrarSubLista[item.id] ? "open" : ""}`}
-                  style={{
-                    left: left,
-                    top: top
-                  }}
-                >
-                  {
-                    item.list.map((elemento) => {
-                      return (
-                        <li key={elemento.id} style={{ backgroundColor: "green" }} > {elemento.name} </li>
-                      )
-                    })
+      {datos.menuItems.map((item) => {
+        return (
+          <div>
+          {item.idPadre === datos.idFirstNivel ?
+            item.isFolder ? <li
+              key={item.id}
+            >
+                <span onClick={(e) => handleMostrarSubMenu(item.id, e)}>{item.name}</span>
+              
+                {estadoSubLista &&  
+                <ul className="sub-menu-ul.open" style={{
+                  left: "0px",
+                  top: "20px"
+                }}>
+                  
+                  {datos.menuItems.map((subItem) => {
+                    return (
+                      item.id === subItem.idPadre ?
+                      subItem.isFolder ?
+                        <li
+                        key={subItem.id}
+                        
+                        >
+                          <span onClick={(e) => handleSubMenuNivel3(subItem.id, e)}>{subItem.name}</span>
+                        
+                          {estadoSubLista2 &&
+                          <ul className="sub-menu-ul.open">
+                            {datos.menuItems.map((subItem3) => {
+                              return (
+                                subItem.id === subItem3.idPadre &&
+                                <li>{subItem3.name}</li>
+                              )
+                            }
+                            )}
+                          </ul>
+                          }
+                        </li>
+                      :
+                      <li
+                      key={subItem.id}
+                      >
+                        {subItem.name}
+                      </li>
+                      :
+                      ""
+                    )
+                  })
                   }
-                </ul>
+
+                </ul>}
+              
+
+            </li>
+
+              :
+              <li
+              key={item.id}
+              >
+
+                {item.name}
+
               </li>
+            :
+            ""}
+            </div>
+        )
+        
+      })
+      }
 
-              : <li key={item.id}>{item.name} </li>)  //Devuelve solo el nombre sino existe item.list
-        })
-        }
-
-      </ul>
+    </ul>
 
 
   )
