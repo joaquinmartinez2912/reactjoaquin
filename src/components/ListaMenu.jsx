@@ -11,7 +11,7 @@ function ListaMenu(props) {
   // const [veces, setVeces] = useState(0)
 
   //Defino los manejadores de eventos para mostrar el submenu, no cargo datos con esto, solo abro el submenu
-  const handleMostrarSubMenu = (itemId, e) => {
+  const handleMostrarSubMenu = (e) => {
     e.preventDefault();
 
     setestadoSubLista(!estadoSubLista)
@@ -20,9 +20,8 @@ function ListaMenu(props) {
   ;
   };
 
-  const handleSubMenuNivel3 = (itemId, e) => {
+  const handleSubMenuNivel3 = (e) => {
     e.preventDefault();
-   
     setestadoSubLista2(!estadoSubLista2)
 
     ;
@@ -39,13 +38,10 @@ function ListaMenu(props) {
             item.isFolder ? <li
               key={item.id}
             >
-                <span onClick={(e) => handleMostrarSubMenu(item.id, e)}>{item.name}</span>
+                <span onClick={(e) => handleMostrarSubMenu(e)}>{item.name}</span>
               
                 {estadoSubLista &&  
-                <ul className="sub-menu-ul.open" style={{
-                  left: "0px",
-                  top: "20px"
-                }}>
+                <ul className="ul-segundo-nivel">
                   
                   {datos.menuItems.map((subItem) => {
                     return (
@@ -53,12 +49,13 @@ function ListaMenu(props) {
                       subItem.isFolder ?
                         <li
                         key={subItem.id}
-                        
+                        onMouseEnter={(e) => handleSubMenuNivel3(e)}
+                        onMouseLeave={(e) => handleSubMenuNivel3(e)}
                         >
-                          <span onClick={(e) => handleSubMenuNivel3(subItem.id, e)}>{subItem.name}</span>
+                          <span>{subItem.name}</span>
                         
                           {estadoSubLista2 &&
-                          <ul className="sub-menu-ul.open">
+                          <ul className="ul-tercer-nivel">
                             {datos.menuItems.map((subItem3) => {
                               return (
                                 subItem.id === subItem3.idPadre &&
