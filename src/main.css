@@ -1,5 +1,3 @@
-
-
 /* Se aplica sobre el <ul> que esta en el nav principal*/
 .main-nav {
     display: flex; /* No le pongo flex direction para que quede horizontal */
@@ -8,7 +6,6 @@
     padding: 0rem; /*  Para que quede contra el margen */
     justify-content:start;
     position: absolute;
-    
   }
 
 /* 
@@ -21,6 +18,7 @@ button {
     font-size:large;
     width: 150px;
     height: 2rem;
+    border-radius: 10px;
 
 }
 
@@ -43,7 +41,7 @@ button {
     width: 200px;
     height: 30px;
     color: black;
-    border-radius: 0 0 0 0;
+    border-radius: 0 10px 10px 0;
     cursor: pointer;
     align-items: center;
     justify-content: center;
@@ -51,6 +49,11 @@ button {
     text-indent: 7px;
     border: 1px solid black ;
     margin-right: 1px;
+    transition: 0.5s
+}
+.li-subMenu:hover{
+    box-shadow: rgb(95, 116, 99) 2px 3px 0px;
+    background-color:rgb(130, 185, 200);
 }
 
 .ul-segundo-nivel {

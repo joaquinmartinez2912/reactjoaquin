@@ -23,7 +23,8 @@ function ListaMenu(props) {
   const handleSubMenuNivel3 = (e) => {
     e.preventDefault();
     setestadoSubLista2(!estadoSubLista2)
-
+    // setVeces(veces+1)
+    // alert(veces)
       ;
   };
 
@@ -48,9 +49,14 @@ function ListaMenu(props) {
                 }
                 }
               >
-                <span onClick={(e) => handleMostrarSubMenu(e)}>{item.name}<svg xmlns="http://www.w3.org/2000/svg" width={"20px"} height={"15px"} fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
-                </svg></span>
+                <span onClick={(e) => handleMostrarSubMenu(e)}>
+                  <div>
+                    {item.name}
+                    <svg xmlns="http://www.w3.org/2000/svg" width={"20px"} height={"15px"} fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6H4z" />
+                    </svg>
+                  </div>
+                </span>
 
                 {estadoSubLista &&
                   <ul className="ul-segundo-nivel">
@@ -68,9 +74,14 @@ function ListaMenu(props) {
                               onMouseEnter={(e) => handleSubMenuNivel3(e)}
                               onMouseLeave={(e) => handleSubMenuNivel3(e)}
                             >
-                              <span>{subItem.name}<svg xmlns="http://www.w3.org/2000/svg" width={"20px"} height={"15px"} fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z" />
-                              </svg></span>
+                            <div>
+                              <span>
+                                {subItem.name}
+                                <svg xmlns="http://www.w3.org/2000/svg" width={"20px"} height={"15px"} fill="currentColor" viewBox="0 0 16 16">
+                                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z" />
+                                </svg>
+                              </span>
+                            </div>
 
                               {estadoSubLista2 &&
                                 <ul className="ul-tercer-nivel">
