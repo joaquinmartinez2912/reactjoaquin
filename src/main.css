@@ -1,6 +1,4 @@
-nav{
-    width: 1200px;
-}
+
 
 /* Se aplica sobre el <ul> que esta en el nav principal*/
 .main-nav {
@@ -10,6 +8,7 @@ nav{
     padding: 0rem; /*  Para que quede contra el margen */
     justify-content:start;
     position: absolute;
+    
   }
 
 /* 
@@ -25,7 +24,7 @@ button {
 
 }
 
-li {
+.li-Menu {
     display: block;
     width: 200px;
     height: 30px;
@@ -34,7 +33,22 @@ li {
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align:center;
+    border: 1px solid black ;
+    margin-right: 1px;
+}
+
+.li-subMenu {
+    display: block;
+    width: 200px;
+    height: 30px;
+    color: black;
+    border-radius: 0 0 0 0;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align:start;
+    text-indent: 7px;
     border: 1px solid black ;
     margin-right: 1px;
 }
@@ -47,6 +61,18 @@ li {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 0px;
+    
+}
+
+.ul-segundo-nivel-abierto {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 11px;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    align-items:self-start;
 }
 
 .ul-tercer-nivel {
@@ -57,5 +83,9 @@ li {
     margin-inline-start: 201px;
     margin-inline-end: 0px;
     padding-inline-start: 0px;
+}
+
+nav{
+    width: 1200px;
 }
 
