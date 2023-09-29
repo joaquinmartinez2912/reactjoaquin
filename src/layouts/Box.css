@@ -1,0 +1,19 @@
+.cr_box{
+    border: solid 1px #333;
+    padding: 4px 10px;
+    width: 220px;
+    display: inline-block;
+    margin-left: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.cr_box:hover{
+    background-color: #333;
+    color: #fafafa;
+}
+
+.cr_box:active{
+    box-shadow: 2px 2px 5px #777;
+}

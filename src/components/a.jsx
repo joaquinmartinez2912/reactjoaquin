@@ -1,7 +1,5 @@
 import { useState } from "react";
 import "../main.css";
-import ItemMenu from "./Itemmenu";
-import SubListaMenu3 from "./SubListaMenu3";
 
 function ListaMenu(props) {
   const datos = props.data
@@ -86,11 +84,24 @@ function ListaMenu(props) {
                             </div>
 
                               {estadoSubLista2 &&
-                               <SubListaMenu3 data={datos.menuItems} comp = {subItem.id} >  </SubListaMenu3>
+                                <ul className="ul-tercer-nivel">
+                                  {datos.menuItems.map((subItem3) => {
+                                    return (
+                                      subItem.id === subItem3.idPadre &&
+                                      <li key={subItem3.id} className="li-subMenu">{subItem3.name}</li>
+                                    )
+                                  }
+                                  )}
+                                </ul>
                               }
                             </li>
                             :
-                            <ItemMenu llave={subItem.name} > {subItem.name} </ItemMenu> 
+                            <li
+                              key={subItem.id}
+                              className="li-subMenu"
+                            >
+                              {subItem.name}
+                            </li>
                           :
                           ""
                       )

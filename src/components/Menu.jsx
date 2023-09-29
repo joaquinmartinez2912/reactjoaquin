@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 //import data from "../data/items.json";
 import "../main.css";
 import ListaMenu from './ListaMenu';
-
+// import Article from "./Article";
+// import Boxapunte from "./Boxapunte";
+// import Box from './layouts/Box';
 
 function Menu() {
 
@@ -37,6 +39,7 @@ function Menu() {
         {mostrarMenu &&
           <ListaMenu data={configMenu} />
         }
+
     </div>
   )
 }
