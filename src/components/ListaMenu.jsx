@@ -7,14 +7,12 @@ function ListaMenu(props) {
   const datos = props.data
 
   const [estadoSubLista, setestadoSubLista] = useState([])
-  const [estadoMenu , setestadoMenu] = useState(false)
-
+ 
   const handleMostrarSubMenu = (e, SubMenuId) => {
     e.preventDefault();
     setestadoSubLista((prev) => {
       const arr = [...prev]
-      setestadoMenu(!estadoMenu)
-      arr[SubMenuId] = estadoMenu
+      arr[SubMenuId] = !arr[SubMenuId]
       return arr
     })
       ;
