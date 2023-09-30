@@ -4,13 +4,13 @@ import ItemMenu from "./Itemmenu";
 
 function SubListaMenu3(props) {
     const datos = props.data
-    const para = props.comp
+    const SubMenu2 = props.subMenu2
     return (
-        <ul className="ul-tercer-nivel">
+        <ul key="" className="ul-tercer-nivel">
             {datos.map((subItem3) => {
                 return (
-                    para === subItem3.idPadre &&
-                    <ItemMenu llave={subItem3.name} > {subItem3.name} </ItemMenu>
+                    SubMenu2 === subItem3.idPadre &&
+                    <ItemMenu llave={subItem3.id} > {subItem3.name} </ItemMenu>
                 )
             }
             )}

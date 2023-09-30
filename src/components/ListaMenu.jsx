@@ -32,7 +32,7 @@ function ListaMenu(props) {
 
   return (
 
-    <ul className="main-nav" style={
+    <ul key={"1"} className="main-nav" style={
       {
         background: datos.configColor.background,
       }
@@ -61,14 +61,12 @@ function ListaMenu(props) {
                 </span>
 
                 {estadoSubLista &&
-                  <ul className="ul-segundo-nivel">
+                  <ul key={"2"} className="ul-segundo-nivel">
                     {datos.menuItems.map((subItem) => {
                       return (
                         item.id === subItem.idPadre ?
                           subItem.isFolder ?
-                            <li
-                              key={subItem.id}
-                              className="li-subMenu"
+                            <ItemMenu llave={subItem.id}
                               style={{
                                 background: datos.configColor.itemBackground,
                                 color: estadoSubLista2 && datos.configColor.itemActive
@@ -76,30 +74,26 @@ function ListaMenu(props) {
                               onMouseEnter={(e) => handleSubMenuNivel3(e)}
                               onMouseLeave={(e) => handleSubMenuNivel3(e)}
                             >
-                            <div>
-                              <span>
-                                {subItem.name}
-                                <svg xmlns="http://www.w3.org/2000/svg" width={"20px"} height={"15px"} fill="currentColor" viewBox="0 0 16 16">
-                                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z" />
-                                </svg>
-                              </span>
-                            </div>
-
+                              <div>
+                                <span>
+                                  {subItem.name}
+                                  <svg xmlns="http://www.w3.org/2000/svg" width={"20px"} height={"15px"} fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z" />
+                                  </svg>
+                                </span>
+                              </div>
                               {estadoSubLista2 &&
-                               <SubListaMenu3 data={datos.menuItems} comp = {subItem.id} >  </SubListaMenu3>
+                                <SubListaMenu3 data={datos.menuItems} subMenu2={subItem.id} >  </SubListaMenu3>
                               }
-                            </li>
+                            </ItemMenu> 
                             :
-                            <ItemMenu llave={subItem.name} > {subItem.name} </ItemMenu> 
+                            <ItemMenu llave={subItem.id} > {subItem.name} </ItemMenu> 
                           :
                           ""
                       )
                     })
                     }
-
                   </ul>}
-
-
               </li>
 
                 : // Este es el negativo del menu nivel 1. Lo que pasa si isfolder = false 

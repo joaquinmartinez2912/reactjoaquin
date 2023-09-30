@@ -22,6 +22,9 @@ function Menu() {
       { name: 'Action Nivel2', isFolder: false, id: 3, idPadre: 2 },
       { name: 'Another action Nivel2', isFolder: false, id: 4, idPadre: 2 },
       { name: 'sub menu Nivel2', isFolder: true, id: 5, idPadre: 2 },
+      { name: 'otro sub 2', isFolder: true, id: 99, idPadre: 2 },
+
+      { name: 'otro Nivel3', isFolder: false, id: 98, idPadre: 99 },
       { name: 'Another action Nivel3', isFolder: false, id: 55, idPadre: 5 },
       { name: 'something else here Nivel3', isFolder: false, id: 56, idPadre: 5 },
     ],
