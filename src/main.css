@@ -1,17 +1,13 @@
-/* Se aplica sobre el <ul> que esta en el nav principal*/
+
 .main-nav {
-    display: flex; /* No le pongo flex direction para que quede horizontal */
+    display: flex; 
     list-style: none;
     width: 1350px;
-    padding: 0rem; /*  Para que quede contra el margen */
+    padding: 0rem; 
     justify-content:start;
     position: absolute;
   }
 
-/* 
-Lista de botones:
-- Boton que despliega Menu
-*/
 button {
     background-color: black;
     color: yellow;
