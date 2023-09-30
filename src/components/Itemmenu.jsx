@@ -4,14 +4,15 @@ import PropTypes from 'prop-types';
 
 function ItemMenu(props) {
     ItemMenu.propTypes={
-        llave : PropTypes.number.isRequired
+        llave : PropTypes.number.isRequired,
+        clase : PropTypes.string.isRequired
     }
    
-    const { key, style, onMouseEnter, onMouseLeave} = props;
-    
+    const { key, clase, style, onMouseEnter, onMouseLeave} = props;
+   
     return (
         <li key={key}
-            className="li-subMenu"
+            className= {clase}
             style={
                 style}
             onMouseEnter={onMouseEnter}

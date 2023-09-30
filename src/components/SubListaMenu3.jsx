@@ -10,7 +10,7 @@ function SubListaMenu3(props) {
             {datos.map((subItem3) => {
                 return (
                     SubMenu2 === subItem3.idPadre &&
-                    <ItemMenu llave={subItem3.id} > {subItem3.name} </ItemMenu>
+                    <ItemMenu llave={subItem3.id} clase = "li-subMenu" > {subItem3.name} </ItemMenu>
                 )
             }
             )}
