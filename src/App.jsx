@@ -1,5 +1,6 @@
 import "./main.css";
 import ListaMenu from './components/ListaMenu';
+import DrawClass from "./components/DrawClass";
 
 function App() {
 
@@ -26,10 +27,42 @@ function App() {
     ],
   }
 
+  const CLASS_UML = {
+    name: 'Person',
+    attributes: ['+name:str','+phoneNumber:str','+emailAddress:str'],
+    methods:['+purcharseParkinPass()'],
+    borderColor:'#DC2DDE',
+    headColor:'#DC2DDE',
+    textColor:'#333333'
+  }
+  
+  const CLASS_UML2 = {
+    name: 'Address',
+    attributes: ['+street:str','+city:str','+state:str','+postalCode:int','+country:str'],
+    methods:['+validate():bool','+outputAsLabel():str'],
+    borderColor:'#00AAE4',
+    headColor:'#00AAE4',
+    textColor:'#333333'
+  }
+
   return (
-    <div>
-      <ListaMenu data={configMenu} />
-    </div>
+      <main className="container">
+        <div>
+          <ListaMenu data={configMenu} />
+        </div>
+
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        
+        <div className="container2">
+          <div>
+            <DrawClass data={CLASS_UML}/> 
+          </div>
+          
+          <div>
+            <DrawClass data={CLASS_UML2}/>
+          </div>
+        </div>
+      </main>
   );
 }
 
