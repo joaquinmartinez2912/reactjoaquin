@@ -8,7 +8,7 @@ function ItemMenu(props) {
         clase : PropTypes.string.isRequired
     }
    
-    const { key, clase, style, onMouseEnter, onMouseLeave} = props;
+    const { key, clase, style, onMouseEnter, onMouseLeave,onClick} = props;
    
     return (
         <li key={key}
@@ -17,7 +17,7 @@ function ItemMenu(props) {
                 style}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
-            
+            onClick={onClick}
         > {props.children} 
         </li>
     )
