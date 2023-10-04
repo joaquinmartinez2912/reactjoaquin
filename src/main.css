@@ -18,22 +18,28 @@
     position: absolute;
   }
 
-button {
-    background-color: black;
-    color: yellow;
-    font-size:large;
-    width: 150px;
-    height: 2rem;
-    border-radius: 10px;
-
-}
-
 .li-Menu {
     display: block;
     width: 200px;
     height: 30px;
     color: black;
     border-radius: 0 0 0 0;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    text-align:center;
+    border: 1px solid black ;
+    margin-right: 1px;
+    transition: 0.5s
+}
+
+.li-Menu:hover {
+    display: block;
+    width: 200px;
+    height: 30px;
+    color: black;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgb(176, 188, 189);
     cursor: pointer;
     align-items: center;
     justify-content: center;

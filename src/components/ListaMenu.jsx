@@ -12,6 +12,11 @@ function ListaMenu(props) {
     e.preventDefault();
     setestadoSubLista((prev) => {
       const arr = [...prev]
+      for (let i = 0; i < arr.length; i++) {
+        if (i !== SubMenuId) {
+          arr[i] = false; 
+        }
+      }
       arr[SubMenuId] = !arr[SubMenuId]
       return arr
     })
