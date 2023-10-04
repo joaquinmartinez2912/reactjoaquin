@@ -1,5 +1,5 @@
 import "./main.css";
-import ListaMenu from './components/ListaMenu';
+import Menu from './components/Menu';
 import DrawClass from "./components/DrawClass";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       background:'#f4f5fa', // Color de Fondo General de la botonera
       itemBackground: '#d0d0d0',// Color de Fondo de los subMenús
       itemColor: '#666', // Color del texto de cada item del menú
-      itemActive: 'blue', // Color cuando hace click y se abre un  submenú '#a8a8a8',
+      itemActive:'#a8a8a8', // Color cuando hace click y se abre un  submenú '#a8a8a8',
     },
     idFirstNivel: 150,
     menuItems: [
@@ -48,23 +48,20 @@ function App() {
   return (
       <main className="container">
         <div>
-          <ListaMenu data={configMenu} />
+          <Menu data={configMenu} />
         </div>
 
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         
         <div className="container2">
-          <div>
             <DrawClass data={CLASS_UML}/> 
-          </div>
-          
-          <div>
+        
             <DrawClass data={CLASS_UML2}/>
-          </div>
         </div>
       </main>
   );
 }
+
 
 export default App;
 

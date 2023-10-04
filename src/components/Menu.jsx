@@ -3,7 +3,7 @@ import "../main.css";
 import ItemMenu from "./Itemmenu";
 import SubListaMenu2 from "./SubListaMenu2";
 
-function ListaMenu(props) {
+function Menu(props) {
   const datos = props.data
 
   const [estadoSubLista, setestadoSubLista] = useState([])
@@ -72,5 +72,5 @@ function ListaMenu(props) {
   )
 }
 
-export default ListaMenu
+export default Menu
 
