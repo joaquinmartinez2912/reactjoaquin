@@ -1,7 +1,6 @@
 import "../main.css";
 import ItemMenu from "./Itemmenu";
 
-
 function SubListaMenu3(props) {
     const datos = props.data
     const SubMenu2 = props.subMenu2

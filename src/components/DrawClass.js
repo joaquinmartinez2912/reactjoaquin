@@ -4,7 +4,7 @@ export default function DrawClass(props) {
   const heightAttributes = props.data.attributes.length * 20 //20 es el tamaño aprox de pixeles de alto de la tipografía
   const heightMethods = props.data.methods.length * 20
   const heightTitle = 24 
-  const svgHeight = heightTitle + heightAttributes + heightMethods + 64 //64 es la suma de todos los margins 
+  const svgHeight = heightTitle + heightAttributes + heightMethods + 60 //64 es la suma de todos los margins 
   const marginElement = 20 //margin para la separación entre los elementos del componente
 
   return (

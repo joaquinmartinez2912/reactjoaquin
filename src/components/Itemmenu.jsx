@@ -1,7 +1,6 @@
 import "../main.css";
 import PropTypes from 'prop-types';
 
-
 function ItemMenu(props) {
     ItemMenu.propTypes={
         llave : PropTypes.number.isRequired,
@@ -11,7 +10,8 @@ function ItemMenu(props) {
     const { key, clase, style, onMouseEnter, onMouseLeave,onClick} = props;
    
     return (
-        <li key={key}
+        <li 
+            key={key}
             className= {clase}
             style={
                 style}
