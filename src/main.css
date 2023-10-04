@@ -12,10 +12,11 @@
 .main-nav {
     display: flex; 
     list-style: none;
-    width: 1350px;
+    width: 100%;
     padding: 0rem; 
     justify-content:start;
     position: absolute;
+    margin-top: 0px;
   }
 
 .li-Menu {
@@ -28,7 +29,6 @@
     align-items: center;
     justify-content: center;
     text-align:center;
-    border: 1px solid black ;
     margin-right: 0px;
     transition: 0.5s
 }
@@ -38,14 +38,13 @@
     width: 200px;
     height: 30px;
     color: black;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: rgb(95, 116, 99) 5px 0px 5px;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: rgb(143, 160, 147) 5px 0px 5px 5px;
     background-color: #F0E853;
     cursor: pointer;
     align-items: center;
     justify-content: center;
     text-align:center;
-    border: 1px solid black ;
     margin-right: 0px;
 }
 
@@ -60,7 +59,7 @@
     justify-content: center;
     text-align:start;
     text-indent: 7px;
-    border: 1px solid black ;
+    border: 1px solid grey ;
     margin-right: 1px;
     transition: 0.5s
 }
