@@ -1,14 +1,15 @@
 import React from 'react';
 
 export default function DrawClass(props) {
-  const heightAttributes = props.data.attributes.length * 20 //20 es el tamaño aprox de pixeles de alto de la tipografía
-  const heightMethods = props.data.methods.length * 20
-  const heightTitle = 24 
-  const svgHeight = heightTitle + heightAttributes + heightMethods + 60 //64 es la suma de todos los margins 
+  const fontPx = 20 //20 es el tamaño aprox de pixeles que ocupa cada letra
   const marginElement = 20 //margin para la separación entre los elementos del componente
-
+  const heightAttributes = props.data.attributes.length * fontPx 
+  const heightMethods = props.data.methods.length * fontPx
+  const heightTitle = 24 
+  const svgHeight = heightTitle + heightAttributes + heightMethods + (marginElement*3) 
+  
   return (
-    <svg width="200" height={svgHeight} xmlns="http://www.w3.org/2000/svg">
+    <svg width='200' height={svgHeight} xmlns="http://www.w3.org/2000/svg">
       {/* Rectángulo principal */}
       <rect
         className="main"
@@ -41,8 +42,9 @@ export default function DrawClass(props) {
           <text 
             key={index} 
             x="20" 
-            y={heightTitle+marginElement + 20*index}
-            fill={props.data.textColor}>
+            y={heightTitle+marginElement + fontPx*index}
+            fill={props.data.textColor}
+            >
             {item}
           </text>
         );
@@ -61,7 +63,7 @@ export default function DrawClass(props) {
           <text
             key={index}
             x="20"
-            y={(heightAttributes+marginElement + heightTitle+marginElement + marginElement)+ 20*index}
+            y={(heightAttributes+marginElement + heightTitle+marginElement + marginElement)+ fontPx*index}
             fill={props.data.textColor}
           >
             {item}
