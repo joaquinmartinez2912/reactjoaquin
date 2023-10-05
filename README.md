@@ -1,3 +1,18 @@
+# ReactJS INTEGRADOR
+#### INSTITUTO TECNOLÓGICO RÍO CUARTO
+#### TECNICATURA SUPERIOR EN DESARROLLO DE SOFTWARE
+#### Asignatura: JavaScript
+#### Encargado: Fernando Muñoz
+#### Ciclo: 2023
+
+## Integrantes
+
+* Irazoqui Marcos.
+* Martinez Joaquin.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
