@@ -29,9 +29,11 @@ export default function DrawClass(props) {
         fill={props.data.headColor}
       />
       <text 
-        x={((200 - (props.data.name.length*10))/2)} 
+        x="100"
         y="18" 
-        fill={props.data.textColor}>
+        fill={props.data.textColor}
+        textAnchor='middle'
+        >
         {props.data.name}
       </text>
 
